@@ -1,0 +1,28 @@
+package com.example.proposal.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+/** Detail page of the selected account (client variant). */
+public class AccountDetailPage extends BasePage {
+
+    // TODO: replace with the real locators and URL fragment
+    private static final By HEADER               = By.cssSelector("h1");
+    private static final By ADD_LOCATIONS_BUTTON = By.xpath("//button[normalize-space()='Add Locations']");
+
+    public AccountDetailPage(WebDriver driver) {
+        super(driver);
+    }
+
+    @Override
+    public void assertLoaded() {
+        assertUrlContains("/TODO-account-detail");
+        assertDisplayed(HEADER, "Account header");
+        assertDisplayed(ADD_LOCATIONS_BUTTON, "Add Locations button");
+    }
+
+    public ApplicationPageOne clickAddLocations() {
+        click(ADD_LOCATIONS_BUTTON);
+        return arriveAt(new ApplicationPageOne(driver));
+    }
+}
