@@ -1,4 +1,4 @@
-package com.example.proposal.models;
+package com.example.portalUsers.models;
 
 import java.util.Arrays;
 import java.util.List;

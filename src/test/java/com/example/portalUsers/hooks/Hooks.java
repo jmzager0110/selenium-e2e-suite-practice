@@ -1,7 +1,7 @@
-package com.example.proposal.hooks;
+package com.example.portalUsers.hooks;
 
-import com.example.proposal.support.DriverFactory;
-import com.example.proposal.support.TestContext;
+import com.example.portalUsers.support.DriverFactory;
+import com.example.portalUsers.support.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

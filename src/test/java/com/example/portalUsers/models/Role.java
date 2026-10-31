@@ -1,4 +1,4 @@
-package com.example.proposal.models;
+package com.example.portalUsers.models;
 
 /** The two user variants. The lower-case name is the prefix of the config keys, e.g. client.username. */
 public enum Role {
