@@ -1,4 +1,4 @@
-package com.example.intake.support;
+package com.example.support;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,7 +29,17 @@ public final class Config {
         if (fromSystem != null && !fromSystem.isBlank() && !fromSystem.startsWith("${")) {
             return fromSystem;
         }
+
         return PROPS.getProperty(key);
+    }
+
+    /** Like get(), but fails with a clear message when the value is missing. */
+    public static String require(String key) {
+        String value = get(key);
+        if (value == null || value.isBlank()) {
+            throw new IllegalStateException("Missing required config value: " + key);
+        }
+        return value;
     }
 
     public static boolean getBoolean(String key) {
@@ -37,6 +47,15 @@ public final class Config {
     }
 
     public static Duration waitTimeout() {
-        return Duration.ofSeconds(Long.parseLong(get("explicit.wait.seconds")));
+        String value = get("explicit.wait.seconds");
+        //return Duration.ofSeconds(Long.parseLong(get("explicit.wait.seconds")));
+        return Duration.ofSeconds( value == null || value.isBlank() ? 15 : Long.parseLong(value.trim()));
     }
+
+    // Surefire passes an unset ${key} through as an empty string or the literal "${key}",
+    // so both count as "not set".
+    private static boolean isSet(String value) {
+        return value != null && !value.isBlank() && !value.startsWith("${");
+    }
+
 }

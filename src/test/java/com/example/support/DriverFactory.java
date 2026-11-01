@@ -1,4 +1,4 @@
-package com.example.portalUsers.support;
+package com.example.support;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

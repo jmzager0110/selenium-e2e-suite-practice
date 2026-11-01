@@ -1,9 +1,10 @@
 package com.example.intake.pages;
 
-import com.example.intake.models.LocationData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import com.example.models.LocationData;
 
 /**
  * Component object for the "Add Location" iframe.
@@ -39,9 +40,9 @@ public class LocationFrame extends BasePage {
     }
 
     public LocationFrame fill(LocationData data) {
-        type(NAME_INPUT, data.getName());
-        selectByVisibleText(TYPE_SELECT, data.getType());
-        click(By.xpath(String.format(CATEGORY_RADIO_XPATH, data.getCategory())));
+        type(NAME_INPUT, data.name());
+        selectByVisibleText(TYPE_SELECT, data.type());
+        click(By.xpath(String.format(CATEGORY_RADIO_XPATH, data.category())));
         return this;
     }
 

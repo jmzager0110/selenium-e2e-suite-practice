@@ -1,13 +1,14 @@
-package com.example.portalUsers.hooks;
+package com.example.hooks;
 
-import com.example.portalUsers.support.DriverFactory;
-import com.example.portalUsers.support.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
+import com.example.support.DriverFactory;
+import com.example.support.TestContext;
 
 public class Hooks {
 
@@ -28,6 +29,10 @@ public class Hooks {
         if (context.getProposalId() != null) {
             scenario.log("Proposal ID: " + context.getProposalId());
         }
+        //intakeFormId
+        if (context.getIntakeFormId() != null) {
+            scenario.log("Proposal ID: " + context.getIntakeFormId());
+        }
 
         WebDriver driver = context.getDriver();
         if (driver == null) {
@@ -39,8 +44,11 @@ public class Hooks {
                 scenario.attach(png, "image/png", "Failure screenshot");
             }
         } finally {
-            // quit() (not close()) ends the session and shuts down the driver process.
+            // quit() (not close()) ends the session and shuts down the driver process,
+            // and it is safe even if the "Click done" step already closed the window.
             driver.quit();
         }
     }
+
+    
 }

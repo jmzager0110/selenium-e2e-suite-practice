@@ -1,4 +1,4 @@
-@smoke
+@smoke @intake
 Feature: Submit an intake form with multiple locations
 
   Scenario: Complete an intake form with two locations and capture the intake form ID

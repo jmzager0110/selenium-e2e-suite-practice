@@ -1,7 +1,7 @@
 package com.example.portalUsers.steps;
 
-import com.example.portalUsers.models.LocationData;
-import com.example.portalUsers.models.Role;
+import com.example.models.Role;
+import com.example.models.LocationData;
 import com.example.portalUsers.pages.AgentHomePage;
 import com.example.portalUsers.pages.ApplicationPageOne;
 import com.example.portalUsers.pages.ApplicationPageTwo;
@@ -12,8 +12,8 @@ import com.example.portalUsers.pages.LoginPage;
 import com.example.portalUsers.pages.PaymentOptionsPage;
 import com.example.portalUsers.pages.SelectionPage;
 import com.example.portalUsers.pages.SubmitPage;
-import com.example.portalUsers.support.Config;
-import com.example.portalUsers.support.TestContext;
+import com.example.support.Config;
+import com.example.support.TestContext;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -51,7 +51,7 @@ public class ProposalSteps {
 
         String prefix = role.configPrefix();
         new LoginPage(driver())
-                .open(Config.require("base.url"))
+                .open(Config.require("portal.base.url"))
                 .login(Config.require(prefix + ".username"), Config.require(prefix + ".password"));
     }
 

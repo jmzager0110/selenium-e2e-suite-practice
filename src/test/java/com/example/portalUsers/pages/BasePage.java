@@ -1,6 +1,6 @@
 package com.example.portalUsers.pages;
 
-import com.example.portalUsers.support.Config;
+import com.example.support.Config;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;

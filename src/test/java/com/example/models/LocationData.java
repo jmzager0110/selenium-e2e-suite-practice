@@ -1,8 +1,13 @@
-package com.example.portalUsers.models;
+package com.example.models;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+
+/**
+ * One set of values for the "Add Location" iframe form.
+ * TODO: replace/extend these fields with whatever the real form asks for.
+ */
 
 /**
  * One set of values for the "Add Location" iframe form.
@@ -16,6 +21,8 @@ public record LocationData(
         String zip,                        // TODO: free-text field
         String classification,             // TODO: dropdown selection
         String coverageType,               // TODO: radio selection
+        String type,
+        String category,
         List<String> additionalOptions) {  // TODO: checkbox selections
 
     /** Builds a location from one row of a Gherkin data table (header row = column names). */
@@ -28,6 +35,8 @@ public record LocationData(
                 required(row, "zip"),
                 required(row, "classification"),
                 required(row, "coverage type"),
+                required(row, "type"),
+                required(row, "category"),
                 splitList(row.get("additional options")));
     }
 
@@ -50,3 +59,7 @@ public record LocationData(
                 .toList();
     }
 }
+
+    
+
+    

@@ -1,5 +1,5 @@
-@smoke
-Feature: Submit a proposal end to end
+@smoke @portal
+Feature: Submit a proposal end to end as a portal user
 
   # The two variants differ only in how they reach application page one:
   #   client: Accounts > first result > Add Locations

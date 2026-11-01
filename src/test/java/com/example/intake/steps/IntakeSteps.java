@@ -1,11 +1,12 @@
 package com.example.intake.steps;
 
-import com.example.intake.models.LocationData;
 import com.example.intake.pages.ConfirmationPage;
 import com.example.intake.pages.IntakeFormPage;
 import com.example.intake.pages.LocationFrame;
-import com.example.intake.support.Config;
-import com.example.intake.support.TestContext;
+import com.example.models.LocationData;
+import com.example.support.Config;
+import com.example.support.TestContext;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -38,7 +39,7 @@ public class IntakeSteps {
 
     @Given("I open the intake form")
     public void iOpenTheIntakeForm() {
-        intakeForm().open(Config.get("base.url"));
+        intakeForm().open(Config.get("intake.base.url"));
     }
 
     @Given("I complete the primary fields with first name {string}, last name {string} and request type {string}")
@@ -49,7 +50,7 @@ public class IntakeSteps {
     @When("I add a location named {string} of type {string} in category {string}")
     public void iAddALocation(String name, String type, String category) {
         intakeForm().clickAddLocation();
-        locationFrame().addLocation(new LocationData(name, type, category));
+        locationFrame().addLocation(new LocationData(name, type, category, category, category, category, category, category, category, null));
     }
 
     @When("I save the changes")

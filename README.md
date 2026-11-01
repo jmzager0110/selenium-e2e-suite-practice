@@ -19,18 +19,23 @@ These are written in Java 17 with Selenium 4.27.
 mvn test-compile
 
 mvn test                                   # both variants, config.properties defaults
-mvn test -Dbrowser=firefox -Dheadless=true
-mvn test -Dtest=ClientProposalE2ETest      # one variant
+mvn test -Dbrowser=firefox -Dheadless=false
+mvn test -Dcucumber.filter.tags="@portal" -Dheadless=false
+mvn test -Dcucumber.filter.tags="@portal"
+mvn test -Dcucumber.filter.tags="@intake"
+mvn test -Dcucumber.filter.tags="@intake" -Dheadless=false 
 ```
 ## TODO
+Filter flags are not running individual tests, troubleshoot & resolve.
+
 Each variant's base url has it's own varaible in the pom file:
 ```
 ${portal.base.url}
 ${intake.base.url}
 ```
 For local testing, these can be updated in the associated config.properties files. But these should be added to a gitignor'ed file, like a .env file in each project's resources directory, then variablized in the configs.
-
 Add a .env file to your local for credentials in resources/portalUsers
+Then variablize the values in config.properties
 
 Set credentials with environment variables rather than editing the file:
 `CLIENT_USERNAME`, `CLIENT_PASSWORD`, `AGENT_USERNAME`, `AGENT_PASSWORD`, `BASE_URL`.
