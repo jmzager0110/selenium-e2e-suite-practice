@@ -1,12 +1,12 @@
-package com.example.portalUsers.notInUse.base;
+package com.example.portalUsers.xxnotInUse.base;
 
-import com.example.e2e.driver.DriverFactory;
-import com.example.e2e.utils.ScreenshotUtil;
+import com.example.portalUsers.xxnotInUse.driver.DriverFactory;
+import com.example.portalUsers.xxnotInUse.utils.ScreenshotUtil;
 import org.openqa.selenium.WebDriver;
-import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+//import org.testng.ITestResult;
+//import org.testng.Reporter;
+//import org.testng.annotations.AfterMethod;
+//import org.testng.annotations.BeforeMethod;
 
 import java.nio.file.Path;
 

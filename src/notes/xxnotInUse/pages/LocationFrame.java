@@ -1,7 +1,7 @@
-package com.example.portalUsers.notInUse.pages;
+package com.example.portalUsers.xxnotInUse.pages;
 
-import com.example.e2e.base.BasePage;
-import com.example.e2e.model.ProposalData;
+import com.example.portalUsers.xxnotInUse.base.BasePage;
+import com.example.portalUsers.xxnotInUse.model.ProposalData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;

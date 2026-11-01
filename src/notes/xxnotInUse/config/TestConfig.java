@@ -1,7 +1,7 @@
-package com.example.portalUsers.notInUse.config;
+package com.example.portalUsers.xxnotInUse.config;
 
-import com.example.e2e.model.Credentials;
-import com.example.e2e.model.Role;
+import com.example.portalUsers.xxnotInUse.model.Credentials;
+import com.example.portalUsers.xxnotInUse.model.Role;
 
 import java.io.IOException;
 import java.io.InputStream;

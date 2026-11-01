@@ -1,4 +1,4 @@
-package com.example.proposal.runners;
+package com.example.portalUsers.runners;
 
 import org.junit.platform.suite.api.IncludeEngines;
 import org.junit.platform.suite.api.SelectClasspathResource;

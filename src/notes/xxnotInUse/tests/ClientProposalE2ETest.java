@@ -1,11 +1,11 @@
-package com.example.portalUsers.notInUse.tests;
+package com.example.portalUsers.xxnotInUse.tests;
 
-import com.example.e2e.base.BaseE2ETest;
-import com.example.e2e.flows.ClientEntryFlow;
-import com.example.e2e.model.Role;
-import com.example.e2e.model.TestDataFactory;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import com.example.portalUsers.xxnotInUse.base.BaseE2ETest;
+import com.example.portalUsers.xxnotInUse.flows.ClientEntryFlow;
+import com.example.portalUsers.xxnotInUse.model.Role;
+import com.example.portalUsers.xxnotInUse.model.TestDataFactory;
+//import org.testng.Assert;
+//import org.testng.annotations.Test;
 
 public class ClientProposalE2ETest extends BaseE2ETest {
 

@@ -1,0 +1,1 @@
+I wanted to save the project version that used TestNG instead of JUnit, so I had to move it outside the scrope of this directory, it's in notes ain src.

@@ -1,6 +1,6 @@
-package com.example.proposal.pages;
+package com.example.portalUsers.pages;
 
-import com.example.proposal.models.LocationData;
+import com.example.portalUsers.models.LocationData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;

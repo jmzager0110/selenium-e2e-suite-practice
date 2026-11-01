@@ -1,13 +1,13 @@
-package com.example.portalUsers.notInUse.base;
+package com.example.portalUsers.xxnotInUse.base;
 
-import com.example.e2e.config.TestConfig;
-import com.example.e2e.flows.EntryFlow;
-import com.example.e2e.flows.ProposalFlow;
-import com.example.e2e.model.ProposalData;
-import com.example.e2e.model.Role;
-import com.example.e2e.pages.ApplicationPageOne;
-import com.example.e2e.pages.LoginPage;
-import org.testng.Reporter;
+import com.example.portalUsers.xxnotInUse.config.TestConfig;
+import com.example.portalUsers.xxnotInUse.flows.EntryFlow;
+import com.example.portalUsers.xxnotInUse.flows.ProposalFlow;
+import com.example.portalUsers.xxnotInUse.model.ProposalData;
+import com.example.portalUsers.xxnotInUse.model.Role;
+import com.example.portalUsers.xxnotInUse.pages.ApplicationPageOne;
+import com.example.portalUsers.xxnotInUse.pages.LoginPage;
+//import org.testng.Reporter;
 
 /** The complete journey: navigate, log in, role-specific entry, shared proposal flow, proposal id back. */
 public abstract class BaseE2ETest extends BaseTest {

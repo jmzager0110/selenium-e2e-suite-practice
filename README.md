@@ -23,9 +23,6 @@ mvn test -Dbrowser=firefox -Dheadless=true
 mvn test -Dtest=ClientProposalE2ETest      # one variant
 ```
 ## TODO
-Correct package import/exports for portalUsers runners & other java files, paste "portalUsers"
-
-
 Each variant's base url has it's own varaible in the pom file:
 ```
 ${portal.base.url}
@@ -40,23 +37,11 @@ Set credentials with environment variables rather than editing the file:
 Any config key can also be passed as `-Dkey=value`.
 
 Failure screenshots land in `target/screenshots/`. The proposal id is logged and stored on the test result
-(`proposalId` attribute).
+(`proposalId` attribute). But do you want screenshots?
 
-## Layout
+## Notes
+For validating projects initially, I used some practice sites:
+- PortalUsers, [Just simple auth testing site](https://courses.ultimateqa.com/users/sign_in)
+  I couldn't easily find a test site that had log in plus a simple form page for testing & didn't want to wreck the structure of this skeleton
+- Intake, [Text Input Test Site](https://testpages.eviltester.com/pages/input-elements/text-inputs/)
 
-```
-src/test/java/com/example/e2e/
-  config/   TestConfig            property > env var > config.properties
-  driver/   DriverFactory         per-thread driver (chrome | firefox | edge, optional headless)
-  base/     BasePage              waits, actions, assertions; abstract assertLoaded()
-            BaseTest              browser open/close, screenshot on failure
-            BaseE2ETest           login -> entry flow -> shared flow -> proposal id
-  pages/    one class per page, plus LocationFrame (the iframe)
-  flows/    ClientEntryFlow, AgentEntryFlow (role-specific), ProposalFlow (shared)
-  model/    ProposalData, TestDataFactory, Role, Credentials
-  tests/    ClientProposalE2ETest, AgentProposalE2ETest
-```
-
-## Making it real
-
-Search for `TODO` in `pages/`: each page has placeholder locators, URL fragments and header text to replace.

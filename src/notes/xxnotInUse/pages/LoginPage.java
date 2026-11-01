@@ -1,8 +1,8 @@
-package com.example.portalUsers.notInUse.pages;
+package com.example.portalUsers.xxnotInUse.pages;
 
-import com.example.e2e.base.BasePage;
-import com.example.e2e.config.TestConfig;
-import com.example.e2e.model.Credentials;
+import com.example.portalUsers.xxnotInUse.base.BasePage;
+import com.example.portalUsers.xxnotInUse.config.TestConfig;
+import com.example.portalUsers.xxnotInUse.model.Credentials;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

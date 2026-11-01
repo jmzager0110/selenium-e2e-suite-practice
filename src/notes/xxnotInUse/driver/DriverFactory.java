@@ -1,4 +1,4 @@
-package com.example.portalUsers.notInUse.driver;
+package com.example.portalUsers.xxnotInUse.driver;
 
 import com.example.e2e.config.TestConfig;
 import org.openqa.selenium.Dimension;

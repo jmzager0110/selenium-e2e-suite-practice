@@ -1,4 +1,4 @@
-package com.example.portalUsers.notInUse.utils;
+package com.example.portalUsers.xxnotInUse.utils;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

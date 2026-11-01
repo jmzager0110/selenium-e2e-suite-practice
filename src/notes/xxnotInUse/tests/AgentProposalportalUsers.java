@@ -1,13 +1,13 @@
-package com.example.portalUsers.notInUse.tests;
+package com.example.portalUsers.xxnotInUse.tests;
 
-import com.example.e2e.base.BaseE2ETest;
-import com.example.e2e.flows.AgentEntryFlow;
-import com.example.e2e.model.Role;
-import com.example.e2e.model.TestDataFactory;
+import com.example.portalUsers.xxnotInUse.base.BaseE2ETest;
+import com.example.portalUsers.xxnotInUse.flows.AgentEntryFlow;
+import com.example.portalUsers.xxnotInUse.model.Role;
+import com.example.portalUsers.xxnotInUse.model.TestDataFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AgentProposalE2ETest extends BaseE2ETest {
+public class AgentProposalportalUsers.xxnotInUseTest extends BaseportalUsers.BaseE2ETest {
 
     @Test(description = "Agent: New Application > full proposal > proposal id (default payment option)")
     public void agentCanSubmitProposal() {

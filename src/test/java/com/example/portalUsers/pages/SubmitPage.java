@@ -1,4 +1,4 @@
-package com.example.proposal.pages;
+package com.example.portalUsers.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

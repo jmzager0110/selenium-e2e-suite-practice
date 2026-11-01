@@ -1,6 +1,6 @@
-package com.example.proposal.support;
+package com.example.portalUsers.support;
 
-import com.example.proposal.models.Role;
+import com.example.portalUsers.models.Role;
 import org.openqa.selenium.WebDriver;
 
 /**
