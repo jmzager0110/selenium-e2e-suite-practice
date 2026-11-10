@@ -67,3 +67,20 @@ With no Maven project, VS Code needs to be told where the sources and jars are. 
 If `pom.xml` is still in the folder, VS Code will keep treating it as a Maven project and ignore those settings
 (and complain that Maven is missing). Rename it (for example `pom.xml.reference`) so it is treated as a plain
 Java folder, then run "Java: Clean Java Language Server Workspace". Add `build/` to `.gitignore`.
+
+## IntelliJ IDEA 
+IntelliJ will see `pom.xml` and offer to load it as a Maven project. You don't have to rename the file: skip the prompt, or turn Maven off for the project, and set it up as a plain Java project. 
+1. **Keep Maven out of it.** 
+- First open: if you get the "Maven project found" prompt or banner, dismiss it (don't click *Load Maven Project*). 
+- Already loaded: open the Maven tool window, right-click the project, choose *Unlink Maven Project* (or *Ignore Projects*). Also untick *Settings > Build, Execution, Deployment > Build Tools > Maven > Import Maven projects automatically*. 
+- Starting fresh: *File > New > Project from Existing Sources*, then pick *Create project from existing sources* (not *Import project from external model*). 
+2. **Project Structure** (`Ctrl+Alt+Shift+S`): 
+- *Project*: SDK = `C:\Program Files\Eclipse Adoptium\jdk-25.0.5.8-hotspot`, language level 17 or higher. 
+- *Modules > Sources*: right-click `src/test/java` and mark it **Sources** (blue), and `src/test/resources` as **Resources** (not *Tests*). Marking them as Tests keeps them off the classpath of the run configuration below. Mark `build` and `target` as *Excluded*. - *Modules > Dependencies*: `+` > *JARs or Directories*, choose your jar folder, and when asked pick *Jar Directory*. This adds every jar in it. 
+3. **Run configuration** (replaces `run-tests.sh` inside the IDE): *Run > Edit Configurations > + > Application*. 
+- Main class: `io.cucumber.core.cli.Main` 
+- Program arguments: `--glue com.example --plugin pretty --plugin html:target/cucumber-report.html --tags "@intake" classpath:features` 
+- VM options: `-Dheadless=true` (and any other `-D` flags) 
+- Working directory: the project root (this is where `.env` is read from) 
+- *Use classpath of module*: your module Duplicate it with a different `--tags` value for `@proposal`, `@client` and `@agent`. The Debug button works on it, so you can stop on a breakpoint inside a step or page object. 
+4. **Terminal instead.** `run-tests.sh` needs bash. Set *Settings > Tools > Terminal > Shell path* to `C:\Program Files\Git\bin\bash.exe`, or run it as `"C:\Program Files\Git\bin\bash.exe" ./run-tests.sh -t "@intake"`. Add `out/`, `build/` and `.idea/` to `.gitignore`.
