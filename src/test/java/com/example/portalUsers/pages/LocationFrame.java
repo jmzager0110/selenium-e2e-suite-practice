@@ -4,6 +4,7 @@ import com.example.models.LocationData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import com.example.support.AddressAutocomplete;
 
 /**
  * Component object for the "Add Location" iframe.
@@ -66,10 +67,11 @@ public class LocationFrame extends BasePage {
     /** Fills the fields and makes the selections, then re-reads them to confirm. */
     public LocationFrame fill(LocationData data) {
         type(NAME_INPUT, data.name());
-        type(STREET_INPUT, data.street());
+        /**type(STREET_INPUT, data.street());
         type(CITY_INPUT, data.city());
         type(STATE_INPUT, data.state());
-        type(ZIP_INPUT, data.zip());
+        type(ZIP_INPUT, data.zip());**/
+        new AddressAutocomplete(driver, STREET_INPUT).fillRandom();
         selectByVisibleText(CLASSIFICATION_SELECT, data.classification());
         click(coverageRadio(data.coverageType()));
         for (String option : data.additionalOptions()) {

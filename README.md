@@ -50,3 +50,14 @@ For validating projects initially, I used some practice sites:
   I couldn't easily find a test site that had log in plus a simple form page for testing & didn't want to wreck the structure of this skeleton
 - Intake, [Text Input Test Site](https://testpages.eviltester.com/pages/input-elements/text-inputs/)
 
+## Update 10 November 2026
+In leiu of a [Real Random Address Generation Tool](https://github.com/EthanRBrown/rrad) the needs of the SUT I'm not mentioning outright uses a SmartyStreets prediction service that pops with just a set of numbers for the street number. We need to check if we are under a rate limit for Smarty lookups. I've added two classes for support.
+
+AddressRules will generate our random set of numbers, then rejects suggestions we can't use, like PO Boxes or locations out the mainline US like Alaska, Hawaii, & APO/FPO/DPO. 
+
+AddressAutoComplete will be the driver, entering the set of numbers, wait for suggestions, click the first elgible one. It has a retry for when there are no suggestions & a wait for the full address line to appear so it doesn't get impatient.
+
+To review the "seed", rerun with the prior printed value
+```
+-Daddress.seed=<value>
+```

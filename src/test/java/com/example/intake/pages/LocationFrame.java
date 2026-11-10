@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.example.models.LocationData;
+import com.example.support.AddressAutocomplete;
+
 
 /**
  * Component object for the "Add Location" iframe.
@@ -19,6 +21,7 @@ public class LocationFrame extends BasePage {
     private static final By FRAME = By.cssSelector("iframe[id='TODO-location-frame']");
 
     // TODO: replace with the real locators inside the iframe
+    private static final By STREET_INPUT = By.id("TODO-street");
     private static final By NAME_INPUT      = By.id("TODO-location-name");
     private static final By TYPE_SELECT     = By.id("TODO-location-type");
     private static final String CATEGORY_RADIO_XPATH = "//input[@type='radio' and @value='%s']"; // TODO: adjust
@@ -41,6 +44,7 @@ public class LocationFrame extends BasePage {
 
     public LocationFrame fill(LocationData data) {
         type(NAME_INPUT, data.name());
+        new AddressAutocomplete(driver, STREET_INPUT).fillRandom();
         selectByVisibleText(TYPE_SELECT, data.type());
         click(By.xpath(String.format(CATEGORY_RADIO_XPATH, data.category())));
         return this;
